@@ -1,0 +1,19 @@
+name: Copy Ahmad.txt File
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  copy-file:
+    runs-on: self-hosted
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Create Ahmad.txt File
+      run: echo "my name is ahmad" > ahmad.txt
+
+    - name: Copy File to Local Machine
+      run: cp ahmad.txt /home/muhammadahmedali/example1
